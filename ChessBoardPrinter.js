@@ -7,9 +7,19 @@
  * console.log statement.
  */
 
+var board = ""
 var whiteSquare = " ";
 var blackSquare = "#";
+var column;
+var row;
+var width = 8;
 
-console.log(whiteSquare);
-console.log(blackSquare);
+for (column = 1; column <= width; column += 1) {
+    if (column % 2 == 0) {
+        board += blackSquare;
+    } else {
+        board += whiteSquare;
+    }
+}
 
+console.log(board);
