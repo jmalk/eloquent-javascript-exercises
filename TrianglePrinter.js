@@ -8,7 +8,7 @@ var hash = "#";
 var lineOfHashes = "";
 var baseWidthOfTriangle = 7;
 
-for (rowLength = 1; rowLength <= baseWidthOfTriangle; rowLength++) {
+for (var rowLength = 1; rowLength <= baseWidthOfTriangle; rowLength++) {
     while (lineOfHashes.length < rowLength) {
         lineOfHashes += hash;
     }
