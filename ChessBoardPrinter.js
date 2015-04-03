@@ -7,3 +7,9 @@
  * console.log statement.
  */
 
+var whiteSquare = " ";
+var blackSquare = "#";
+
+console.log(whiteSquare);
+console.log(blackSquare);
+
