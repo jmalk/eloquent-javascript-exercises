@@ -14,12 +14,15 @@ var column;
 var row;
 var width = 8;
 
-for (column = 1; column <= width; column += 1) {
-    if (column % 2 == 0) {
-        board += blackSquare;
-    } else {
-        board += whiteSquare;
+for (row = 1; row <= width; row += 1) {
+    for (column = 1; column <= width; column += 1) {
+        if (column % 2 == 0) {
+            board += blackSquare;
+        } else {
+            board += whiteSquare;
+        }
     }
+    board += "\n";
 }
 
 console.log(board);
