@@ -7,7 +7,7 @@
  * console.log statement.
  */
 
-var board = ""
+var board = "";
 var whiteSquare = " ";
 var blackSquare = "#";
 var column;
