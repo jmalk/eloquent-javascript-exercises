@@ -17,7 +17,7 @@ var width = 8;
 for (row = 1; row <= width; row += 1) {
     for (column = 1; column <= width; column += 1) {
         var columnPlusRow = column + row;
-        if (columnPlusRow % 2 == 0) {
+        if (columnPlusRow % 2 === 0) {
             board += whiteSquare;
         } else {
             board += blackSquare;
