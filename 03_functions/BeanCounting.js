@@ -9,14 +9,19 @@
  * Rewrite countBs to make use of this new function.
  */
 
-var countBs = function(inputString) {
-    var numberOfBs = 0;
-    for (var character = 0; character < inputString.length; character += 1) {
-       if(inputString.charAt(character) === "B") {
-          numberOfBs += 1;
-       }
-    }
-    return numberOfBs;
+var countChar = function(inputString, character) {
+    var numberOfCharacter = 0;
+    for (var position = 0; position < inputString.length; position +=1) {
+        if(inputString.charAt(position) === character) {
+            numberOfCharacter += 1;
+        }
+    }    
+    return numberOfCharacter;
 };
 
-console.log(countBs("BBC"));
+var countBs = function(inputString) {
+   return countChar(inputString, "B");
+};
+
+console.log("There are " + countBs("BBC") + " Bs in BBC.");
+console.log("There are " + countChar("testing", "t") + " ts in testing.");
