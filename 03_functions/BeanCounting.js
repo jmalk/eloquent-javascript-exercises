@@ -20,7 +20,7 @@ var countChar = function(inputString, character) {
 };
 
 var countBs = function(inputString) {
-   return countChar(inputString, "B");
+    return countChar(inputString, "B");
 };
 
 console.log("There are " + countBs("BBC") + " Bs in BBC.");
