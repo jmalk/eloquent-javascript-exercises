@@ -11,3 +11,12 @@
  * 1.
  */
 
+var range = function(start, end) {
+    var numbersInRange = [];
+    for(var i = start; i <= end; i += 1) {
+        numbersInRange.push(i);
+    }
+    return numbersInRange;
+};
+
+console.log(range(1, 10));
