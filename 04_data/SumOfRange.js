@@ -20,3 +20,14 @@ var range = function(start, end) {
 };
 
 console.log(range(1, 10));
+
+var sum = function(arrayOfNumbers) {
+    var sumTotal = 0;
+    for(var i = 0; i < arrayOfNumbers.length; i += 1) {
+        sumTotal += arrayOfNumbers[i];
+    }
+    return sumTotal;
+};
+
+console.log(sum([1, 2]));
+
