@@ -31,3 +31,4 @@ var sum = function(arrayOfNumbers) {
 
 console.log(sum([1, 2]));
 
+console.log(sum(range(1, 10)));
