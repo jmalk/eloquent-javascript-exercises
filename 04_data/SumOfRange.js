@@ -19,8 +19,6 @@ var range = function(start, end) {
     return numbersInRange;
 };
 
-console.log(range(1, 10));
-
 var sum = function(arrayOfNumbers) {
     var sumTotal = 0;
     for(var i = 0; i < arrayOfNumbers.length; i += 1) {
@@ -28,7 +26,5 @@ var sum = function(arrayOfNumbers) {
     }
     return sumTotal;
 };
-
-console.log(sum([1, 2]));
 
 console.log(sum(range(1, 10)));
