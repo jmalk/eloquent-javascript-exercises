@@ -11,9 +11,10 @@
  * 1.
  */
 
-var range = function(start, end) {
+var range = function(start, end, step) {
+    step = typeof step !== 'undefined' ? step : 1;
     var numbersInRange = [];
-    for(var i = start; i <= end; i += 1) {
+    for(var i = start; i <= end; i += step) {
         numbersInRange.push(i);
     }
     return numbersInRange;
