@@ -29,3 +29,7 @@ var sum = function(arrayOfNumbers) {
 };
 
 console.log(sum(range(1, 10)));
+console.log(sum(range(-3, -1)));
+console.log(sum(range(1, 9, 2)));
+// TODO Currently unable to create a range by descending through numbers
+console.log(sum(range(10, 1, -1)));
