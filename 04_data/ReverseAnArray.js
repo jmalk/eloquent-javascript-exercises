@@ -7,4 +7,18 @@
  * as argument.
  */
 
+'use strict';
 
+var reverseArray = function(givenArray) {
+    var reversedArray = [];
+    for(var i = givenArray.length; i >= 0; i -= 1) {
+        reversedArray.push(givenArray[i]);
+    }
+    return reversedArray;
+};
+
+var abc = ['A', 'B', 'C'];
+console.log('Reversed array: ' + reverseArray(abc));
+
+//TODO currently returns a string with prepended commas
+//TODO add reverseArrayInPlace
