@@ -13,7 +13,7 @@
  * and nth, which takes a list and a number and returns the element at the
  * given position in the list, or undefined when there is no such element.
  *
- * TODO: If you haven’t already, also write a recursive version of nth.
+ * If you haven’t already, also write a recursive version of nth.
  */
 
 // Some tests
@@ -52,15 +52,10 @@ var prepend = function(element, list) {
 
 var nth = function(list, index) {
     "use strict";
-    var objectWeAreLookingAt = list;
-    var count = 0;
-    while (objectWeAreLookingAt !== null) {
-        if (count === index) {
-            return objectWeAreLookingAt.value;
-        }
-        count += 1;
-        objectWeAreLookingAt = objectWeAreLookingAt.rest;
+    if (index === 0) {
+        return list.value;
     }
+    return nth(list.rest, index - 1);
 };
 
 console.log(arrayToList([10, 20]));
