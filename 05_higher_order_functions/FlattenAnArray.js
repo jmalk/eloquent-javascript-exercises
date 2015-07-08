@@ -9,5 +9,6 @@
 var arrays = [[1, 2, 3], [4, 5], [6]];
 var flattened = arrays.reduce(function(a, b) {
     'use strict';
-    return a.concat(b); });
+    return a.concat(b);
+});
 console.log('Expected: [1, 2, 3, 4, 5, 6], got: ' + flattened);
