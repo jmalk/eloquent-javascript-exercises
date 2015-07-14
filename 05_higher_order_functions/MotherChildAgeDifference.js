@@ -25,7 +25,7 @@ ancestry.forEach(function(person) {
     byName[person.name] = person;
 });
 
-var hasKnownMother = function(person) {
+function hasKnownMother (person) {
     mothersName = person['mother'];
     if (byName[mothersName]) {
         return true;
