@@ -40,4 +40,6 @@ var ageDifferences = peopleWithKnownMothers.map(function(person) {
     return person.born - byName[person.mother].born;
 })
 
-console.log('Expected average age difference: 31.2, got: ');
+var averageMotherChildAgeDifference = average(ageDifferences);
+
+console.log('Expected average age difference: 31.2, got: ' + averageMotherChildAgeDifference);
