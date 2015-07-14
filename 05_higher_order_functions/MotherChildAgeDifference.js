@@ -34,5 +34,10 @@ var hasKnownMother = function(person) {
     }
 }
 
-console.log('Ancestry by name: ' + JSON.stringify(byName));
+var peopleWithKnownMothers = ancestry.filter(hasKnownMother);
+
+var ageDifferences = peopleWithKnownMothers.map(function(person) {
+    return person.born - byName[person.mother].born;
+})
+
 console.log('Expected average age difference: 31.2, got: ');
