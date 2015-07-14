@@ -10,6 +10,9 @@
  * from their name, might be useful here.
  */
 
+var ancestry = require('./ancestry.js');
+ancestry = JSON.parse(ancestry);
+
 function average(array) {
     'use strict';
     function plus(a, b) { return a + b; }
@@ -22,4 +25,14 @@ ancestry.forEach(function(person) {
     byName[person.name] = person;
 });
 
+var hasKnownMother = function(person) {
+    mothersName = person['mother'];
+    if (byName[mothersName]) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log('Ancestry by name: ' + JSON.stringify(byName));
 console.log('Expected average age difference: 31.2, got: ');
