@@ -26,7 +26,8 @@ ancestry.forEach(function(person) {
 });
 
 function hasKnownMother (person) {
-    mothersName = person['mother'];
+    'use strict';
+    var mothersName = person.mother;
     if (byName[mothersName]) {
         return true;
     } else {
@@ -37,8 +38,9 @@ function hasKnownMother (person) {
 var peopleWithKnownMothers = ancestry.filter(hasKnownMother);
 
 var ageDifferences = peopleWithKnownMothers.map(function(person) {
+    'use strict';
     return person.born - byName[person.mother].born;
-})
+});
 
 var averageMotherChildAgeDifference = average(ageDifferences);
 
