@@ -30,12 +30,24 @@ function ageAtDeath(person) {
     return person.died - person.born;
 }
 
-// console.log('16' + lifeExpectancyByCentury(16));
-// console.log('17' + lifeExpectancyByCentury(17));
-// console.log('18' + lifeExpectancyByCentury(18));
-// console.log('19' + lifeExpectancyByCentury(19));
-// console.log('20' + lifeExpectancyByCentury(20));
-// console.log('21' + lifeExpectancyByCentury(21));
+function lifeExpectancyByCentury(century, people) {
+    // filter input by people who died in century
+    var peopleWhoDiedInGivenCentury = people.filter(function(person) {
+        return centuryOfDeath(person) === century;
+    });
+    // average age-at-death of the filtered group
+    var agesOfPeopleWhoDiedInGivenCentury = peopleWhoDiedInGivenCentury.map(function(person) {
+        return ageAtDeath(person);
+    });
+    return average(agesOfPeopleWhoDiedInGivenCentury);
+}
+
+console.log('16: ' + lifeExpectancyByCentury(16, ancestry));
+console.log('17: ' + lifeExpectancyByCentury(17, ancestry));
+console.log('18: ' + lifeExpectancyByCentury(18, ancestry));
+console.log('19: ' + lifeExpectancyByCentury(19, ancestry));
+console.log('20: ' + lifeExpectancyByCentury(20, ancestry));
+console.log('21: ' + lifeExpectancyByCentury(21, ancestry));
 
 // → 16: 43.5
 //   17: 51.2
