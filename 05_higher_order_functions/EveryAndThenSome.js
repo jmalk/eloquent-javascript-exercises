@@ -37,11 +37,15 @@ function some(array, qualifier) {
     return false;
 }
 
+console.log('Is every element of [NaN, NaN, NaN] not-a-number?');
 console.log(every([NaN, NaN, NaN], isNaN));
 // → true
+console.log('Is every element of [NaN, NaN, 4] not-a-number?');
 console.log(every([NaN, NaN, 4], isNaN));
 // → false
+console.log('Are some elements of [NaN, 3, 4] not-a-number?');
 console.log(some([NaN, 3, 4], isNaN));
 // → true
+console.log('Are some elements of [2, 3, 4] not-a-number?');
 console.log(some([2, 3, 4], isNaN));
 // → false
