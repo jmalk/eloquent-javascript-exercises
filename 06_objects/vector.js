@@ -28,9 +28,24 @@ Vector.prototype.plus = function(vector) {
     return new Vector(x, y);
 };
 
+Vector.prototype.minus = function(vector) {
+    'use strict';
+
+    var x = this.x - vector.x;
+    var y = this.y - vector.y;
+    return new Vector(x, y);
+};
+
+Vector.prototype.length = function() {
+    'use strict';
+
+    var squareOfHypotenuse = this.x * this.x + this.y * this.y;
+    return Math.sqrt(squareOfHypotenuse);
+};
+
 console.log(new Vector(1, 2).plus(new Vector(2, 3)));
 // → Vector{x: 3, y: 5}
-// console.log(new Vector(1, 2).minus(new Vector(2, 3)));
+console.log(new Vector(1, 2).minus(new Vector(2, 3)));
 // → Vector{x: -1, y: -1}
-// console.log(new Vector(3, 4).length);
+console.log(new Vector(3, 4).length());
 // → 5
