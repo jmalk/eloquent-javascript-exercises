@@ -10,9 +10,14 @@
  * Make sure you handle only the exceptions you are trying to handle.
  */
 
-function MultiplicatorUnitFailure() {
+function MultiplicatorUnitFailure(message) {
     'use strict';
+    this.message = message;
+    this.stack = (new Error()).stack;
 }
+
+MultiplicatorUnitFailure.prototype = Object.create(Error.prototype);
+MultiplicatorUnitFailure.prototype.name = 'MultiplicatorUnitFailure';
 
 function primitiveMultiply(a, b) {
     'use strict';
@@ -20,16 +25,22 @@ function primitiveMultiply(a, b) {
         return a * b;
     }
     else {
-        throw new MultiplicatorUnitFailure();
+        throw new MultiplicatorUnitFailure('Primitive attempt at multiplication failed.');
     }
 }
 
 function reliableMultiply(a, b) {
     'use strict';
-    try {
-        primitiveMultiply(a, b);
-    } catch(error) {
-        console.log(error.message);
+    for (;;) {
+        try {
+            return primitiveMultiply(a, b);
+        } catch (error) {
+            if (error instanceof MultiplicatorUnitFailure) {
+                console.log('Failed to multiply, trying again.');
+            } else {
+                throw error;
+            }
+        }
     }
 }
 
