@@ -14,14 +14,19 @@
  * already unlocked, the box stays unlocked.
  */
 
-'use strict';
-
 var box = {
     locked: true,
-    unlock: function() { this.locked = false; },
-    lock: function() { this.locked = true;  },
+    unlock: function() {
+        'use strict';
+        this.locked = false;
+    },
+    lock: function() {
+        'use strict';
+        this.locked = true;
+    },
     _content: [],
     get content() {
+        'use strict';
         if (this.locked) {
             throw new Error("Locked!");
         }
@@ -30,6 +35,7 @@ var box = {
 };
 
 function withBoxUnlocked(body) {
+    'use strict';
     var boxWasLocked = box.locked;
     try {
         console.log('Trying something with the box unlocked.');
@@ -43,11 +49,13 @@ function withBoxUnlocked(body) {
 }
 
 withBoxUnlocked(function() {
+    'use strict';
     box.content.push("gold piece");
 });
 
 try {
     withBoxUnlocked(function() {
+        'use strict';
         throw new Error("Pirates on the horizon! Abort!");
     });
 } catch (e) {
