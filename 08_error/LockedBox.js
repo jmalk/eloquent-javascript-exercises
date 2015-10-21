@@ -30,7 +30,15 @@ var box = {
 };
 
 function withBoxUnlocked(body) {
-    // Your code here.
+    try {
+        console.log('Trying something with the box unlocked.');
+        box.unlock();
+        body();
+    } catch (e) {
+        console.log('Error:', e.message);
+    } finally {
+        box.lock();
+    }
 }
 
 withBoxUnlocked(function() {
@@ -44,5 +52,5 @@ try {
 } catch (e) {
     console.log("Error raised:", e);
 }
-console.log(box.locked);
+console.log('Box locked? Expect true, got:', box.locked);
 // → true
