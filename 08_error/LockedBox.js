@@ -30,6 +30,7 @@ var box = {
 };
 
 function withBoxUnlocked(body) {
+    var boxWasLocked = box.locked;
     try {
         console.log('Trying something with the box unlocked.');
         box.unlock();
@@ -37,7 +38,7 @@ function withBoxUnlocked(body) {
     } catch (e) {
         console.log('Error:', e.message);
     } finally {
-        box.lock();
+        if (boxWasLocked) { box.lock(); }
     }
 }
 
