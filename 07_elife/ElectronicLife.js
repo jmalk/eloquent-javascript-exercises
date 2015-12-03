@@ -41,3 +41,7 @@ Grid.prototype.set = function(vector, value) {
     this.space[vector.x + this.width * vector.y] = value;
 };
 
+var grid = new Grid(5, 5);
+console.log(grid.get(new Vector(1, 1)));
+grid.set(new Vector(1, 1), 'X');
+console.log(grid.get(new Vector(1, 1)));
